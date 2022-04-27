@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <script src='http://makeup-api.herokuapp.com/api/v1/products.json'></script> -->
+  <!-- <script src="https://api.floracodex.com/1jX7Vx1IxVgo091bMotI"></script> -->
+  <script src="assets/js/main.js"></script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+
+</head>
+
+<body>
+  <div class="gh_menu">
+    <a type="button" id="menu_camera">
+      <img class="menu_icon" src="assets/img/camera_logo.png">
+    </a>
+    <a type="button" id="menu_search">
+      <img class="menu_icon" src="assets/img/search_logo.png">
+    </a>
+    <a type="button" id="menu_like">
+      <img class="menu_icon" src="assets/img/like_logo.png">
+    </a>
+    <a type="button" id="menu_playlist">
+      <img class="menu_icon" src="assets/img/playlist_logo.png">
+    </a>
+  </div>
+
+  <!--Camera-->
+  <div class="page_camera">
+  <!-- <form>
+    <input type="file" multiple/>
+    <div id="upload_img">
+    </div>
+    <button type="button">SEARCH</button>
+  </form> -->
+  <center><p>Upload an image of your plant and we'll identify it.</p></center>
+
+  <center><form>
+    <input type="file" multiple />
+    <button type="button" class="btn btn-secondary" id="clickbutton">Go!</button>
+    <img id="imgpreview" src="" height="200" alt="Image preview...">
+  </form></center>
+
+  <br></br>
+  <center><p>Please wait a moment, information will show up soon!</p></center>
+  <section id="idtable">
+  <table class="table table-bordered">
+    <thead class="thead-dark">
+    <tr>
+        <th>Plant name</th>
+        <th>Probability</th>
+        <th>Similar image</th>
+    </tr>
+  </thead>
+    <tbody id="myTable">
+
+    </tbody>
+</table>
+</section>
+</div>
+
+
+</body>
+
+</html>

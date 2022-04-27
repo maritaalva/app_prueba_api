@@ -1,0 +1,78 @@
+
+html, body {
+background-color: #90B98F;
+  height: 100%;
+}
+.gh_menu{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.menu_icon{
+  height: 2.8rem;
+}
+
+
+
+/* {
+  margin: 0;
+  padding: 0;
+} */
+
+#navbar
+{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.navbar{
+  background-image: linear-gradient(to right, #009999, #5f1782);
+}
+
+.jumbotron{
+  position: sticks;
+  align-content: left;
+  padding: 5%;
+}
+
+#miniquiz {
+  text-align: center;
+}
+.container {
+  text-align: center;
+}
+#picture{
+  text-align: center;
+}
+#lightspectrum
+.container{
+  padding:10%
+}
+.row
+
+#information1{
+  text-align: left;
+}
+
+.row{
+  text-align: left;
+}
+
+/*# sourceMappingURL=styles.css.map */
+
+@media screen and (min-width:510px) and (max-width:768px) {
+body{
+  background-color: #009999;
+}
+}
+@media screen and (min-width: 769px) {
+  body{
+    background-color: #ff7530;
+  }
+  }
