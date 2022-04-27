@@ -5,30 +5,37 @@ background-color: #90B98F;
   margin: 0;
 
 }
+.page_bck{
+  z-index:1;
+  position:fixed;
+  background-color: #F5F3E7;
+  width: 100%;
+  height: 100%;
+  border-radius: 0 0 24px 24px;
+  bottom: 3.5rem;
+}
 .gh_menu{
+  background-color: #90B98F;
+  position: fixed;
   z-index:3;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  height: 3rem;
+  height: 3.5rem;
   overflow: hidden;
-  position: fixed;
   bottom: 0;
   width: 100%;
 }
 .menu_icon{
-  height: 2.8rem;
+  height: 2.5rem;
+}
+.page_camera{
+  z-index:2;
+position: relative;
 }
 
-.page_camera{
-  position: absolute;
-  background-color: #F5F3E7;
-  width: 100%;
-  height: 100%;
-  border-radius: 0 0 2.5rem 2.5rem;
-  bottom: 3.2rem;
-}
+
 
 /* {
   margin: 0;
