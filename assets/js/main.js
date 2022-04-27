@@ -1,7 +1,34 @@
 window.onload = () => {
 
-  var plantInfo;
+  ///////CAMBIO PÁGINA MENU//////////
+  let menuCamera = document.querySelector("#menu_camera");
+  let menuSearch = document.querySelector("#menu_search");
+  let menuLike = document.querySelector("#menu_like");
+  let menuPlaylist = document.querySelector("#menu_playlist");
 
+  menuCamera.addEventListener('click', (e) => {
+    page = 1;
+    e.preventDefault();
+    mostrarJuego();
+  });
+  menuSearch.addEventListener('click', (e) => {
+    page = 2;
+    e.preventDefault();
+    mostrarJuego();
+  });
+  menuLike.addEventListener('click', (e) => {
+    page = 3;
+    e.preventDefault();
+    mostrarJuego();
+  });
+  menuPlaylist.addEventListener('click', (e) => {
+    page = 4;
+    e.preventDefault();
+    mostrarJuego();
+  });
+
+////////////////PAGINA CAMERA IMG ID/////////////
+  var plantInfo;
   document.getElementById("clickbutton").addEventListener("click", function(event){
     event.preventDefault();
     sendIdentification();
