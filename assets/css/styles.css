@@ -5,17 +5,66 @@ background-color: #90B98F;
   margin: 0;
 
 }
+@font-face {
+  font-family: 'MonumentGRegular';
+  src: url(../fonts/MonumentGrotesk-Regular.woff) format("woff"), url(../fonts/MonumentGrotesk-Regular.woff2) format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MonumentGRegularItalic';
+  src: url(../fonts/MonumentGrotesk-RegularItalic.woff) format("woff"), url(../fonts/MonumentGrotesk-RegularItalic.woff2) format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MonumentGBold';
+  src: url(../fonts/MonumentGrotesk-Bold.woff) format("woff"), url(../fonts/MonumentGrotesk-Bold.woff2) format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MonumentGSemiMono';
+  src: url(../fonts/MonumentGrotesk-Semi-Mono.woff) format("woff"), url(../fonts/MonumentGrotesk-Semi-Mono.woff2) format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+.fontRegular{
+  font-family: 'MonumentGRegular';
+}
+
+.fontMono{
+  font-family: 'MonumentGSemiMono';
+}
 .page_bck{
   z-index:1;
   position:fixed;
-  background-color: #F5F3E7;
+  background-color: #F4F4EA;
   width: 100%;
   height: 100%;
   border-radius: 0 0 24px 24px;
   bottom: 3.5rem;
 }
+
+#app_logo{
+  height: 1.5rem;
+  top: 1.5rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position:relative;
+  filter: blur(2px);
+  z-index: 10;
+}
+
+#app_logo:hover{
+  filter: blur(0px);
+
+}
 .gh_menu{
-  background-color: #90B98F;
+  background-color: #00473C;
   position: fixed;
   z-index:3;
   display: flex;
@@ -30,11 +79,145 @@ background-color: #90B98F;
 .menu_icon{
   height: 2.5rem;
 }
+
+
+/*/////////PAGINA CAMARA///////////*/
 .page_camera{
+  margin: 3rem 24px 0;
   z-index:2;
+  display: flex;
+  flex-direction: column;
+position: relative;
+}
+.form_section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+#camera_form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+#image_box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid  #90B98F;
+  border-radius:20px;
+  height: 240px;
+  width: 200px;
+}
+#myTable{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  margin-top: 4rem;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  margin-bottom: 4rem;
+}
+.plant_card{
+  height: 15rem;
+  width: 17rem;
+  background-color: #A9C1A9;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+padding: 2rem;  
+  border-radius: 15px;
+  align-items: center;
+}
+.plant_card_img{
+  height: 9rem;
+  width: 9rem;
+  border-radius: 2px;
+}
+.plant_card_img img{
+  height: 9rem;
+  width: 9rem;
+  object-fit: cover;
+  border-radius: 15px;
+}
+#search_btn{
+  font-family: MonumentGSemiMono;
+  color: #377E59;
+  font-size: 1rem;
+  background-color: #F4F4EA;
+  padding: .4rem .8rem;
+width: fit-content;
+  border-radius: 2.5rem;
+  border: #377E59 solid 2px;
+}
+input[type=file]::file-selector-button {
+  font-family: MonumentGSemiMono;
+  color: #ECC82A;
+  font-size: 1rem;
+  background-color: #00473C;
+  border-radius: 2.5rem;
+  border: #377E59 solid 2px;
+  padding: .4rem .8rem;
+  transition: 1s;
+}
+/*/////////PAGINA BUSCAR///////////*/
+.page_search{
+  z-index:2;
+  display: none;
 position: relative;
 }
 
+
+/*/////////PAGINA ME GUSTA///////////*/
+.page_like{
+  z-index:2;
+  display: none;
+position: relative;
+flex-direction: column;
+}
+#fav_card{
+ list-style: none;
+  display: flex;
+  flex-direction: row;
+  background-color: #A9C1A9;
+  border-radius: 2.5rem;
+  padding: 2REM;
+  margin: 2rem 1rem 1rem;
+
+}
+#plant_card_img_fav{
+  filter: blur(2px);
+
+}
+#plant_card_img_fav:hover{
+filter: blur(0px);
+}
+#info_fav{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0  0 0 1rem ;
+}
+/*/////////PAGINA PLAYLIST///////////*/
+.page_playlist{
+  z-index:2;
+  display: none;
+position: relative;
+background-color: #F4F4EA;
+}
+
+iframe { 
+  height: 100vh;
+  position: inherit;
+  mix-blend-mode: difference;
+}
 
 
 /* {
@@ -81,7 +264,6 @@ position: relative;
   text-align: left;
 }
 
-/*# sourceMappingURL=styles.css.map */
 
 @media screen and (min-width:510px) and (max-width:769px) {
 body{

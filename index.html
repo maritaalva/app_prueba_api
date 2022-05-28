@@ -5,22 +5,32 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="assets/img/gh_web_cicon.png" sizes="50x50" />
+
   <!-- <script src='http://makeup-api.herokuapp.com/api/v1/products.json'></script> -->
   <!-- <script src="https://api.floracodex.com/1jX7Vx1IxVgo091bMotI"></script> -->
+  <script src="assets/js/pouchdb-7.2.1.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script> -->
   <script src="assets/js/main.js"></script>
   <link rel="stylesheet" href="assets/css/styles.css">
-
-
 </head>
 
 <body>
+  <img id="app_logo" src="assets/img/gh_logo.png">
+
+  <!--------------------FONDO PÁGINAS--------------------->
+  <div class="page_bck">
+  </div>
+
+
+  <!--------------------MENÚ--------------------->
   <div class="gh_menu">
     <a type="button" id="menu_camera">
       <img class="menu_icon" src="assets/img/camera_logo.png">
     </a>
-    <a type="button" id="menu_search">
+    <!-- <a type="button" id="menu_search">
       <img class="menu_icon" src="assets/img/search_logo.png">
-    </a>
+    </a> -->
     <a type="button" id="menu_like">
       <img class="menu_icon" src="assets/img/like_logo.png">
     </a>
@@ -29,8 +39,8 @@
     </a>
   </div>
 
-  <!--Camera-->
-<div class="page_bck"></div>
+
+  <!--------------------PÁGINA CAMARA--------------------->
   <div class="page_camera">
     <!-- <form>
     <input type="file" multiple/>
@@ -38,37 +48,66 @@
     </div>
     <button type="button">SEARCH</button>
     </form> -->
-    <center>
-      <p>Upload an image of your plant and we'll identify it.</p>
-    </center>
+   <div class="form_section">
+   <p  class="fontMono" > Upload an image of your plant and we'll identify it.</p>
 
-    <center>
-      <form>
-        <input type="file" multiple />
-        <button type="button" class="btn btn-secondary" id="clickbutton">Go!</button>
-        <img id="imgpreview" src="" height="200" alt="Image preview...">
-      </form>
-    </center>
+    <form id="camera_form">
+      <button type="button" class="btn btn-secondary" id="search_btn">search</button>
+      <div id="image_box"><img id="imgpreview" src="" height="200" alt="+"></div>
+      <input id="browse_btn" type="file" alt="select image" multiple />
+
+    </form>
 
     <br></br>
-    <center>
-      <p>Please wait a moment, information will show up soon!</p>
-    </center>
-    <section id="idtable">
-      <table class="table table-bordered">
-        <thead class="thead-dark">
-          <tr>
-            <th>Plant name</th>
-            <th>Probability</th>
-            <th>Similar image</th>
-          </tr>
-        </thead>
-        <tbody id="myTable">
+    <p class="fontRegular">Please wait a moment, information will show up soon!</p>
 
-        </tbody>
-      </table>
+</div>
+    <section id="idtable">
+    <input type="submit" id="add_btn" value="añadir la planta con más probabilidad">
+        <div id="myTable">
+        </div>
+    </section>
+    
+  </div>
+  
+
+  <!-- ------------------PÁGINA BUSCAR-------------------
+  <div class="page_search">
+    <h1>Lista de usuarios</h1>
+    <div id="test-list">
+      <div class="filter-bar">
+        <label for="search">Filtrar</label>
+        <input type="text" class="fuzzy-search" id="search" name="search" />
+        <button class="sort" data-sort="name">
+          Nombre <span class="mdi mdi-sort-ascending"></span>
+        </button>
+        <button class="sort" data-sort="surname">
+          Apellido <span class="mdi mdi-sort-ascending"></span>
+        </button>
+      </div>
+      <ul id="usuarios" class="list"></ul>
+    </div>
+  </div> -->
+
+
+  <!--------------------PÁGINA ME GUSTA--------------------->
+  <div class="page_like">
+    <h3 class="fontMono">your favorites plants</h3>
+    <!-- <div class="loc-list">
+      <span class="titulo-localizaciones"><span class="localitation-title">Tus localizaciones</span> <span id="close"> X</span></span>
+     <ul class="name-locations">
+     </ul> -->
+     <section class="listaFavPlants">       
     </section>
   </div>
+  </div>
+
+
+  <!--------------------PÁGINA PLAYLIST--------------------->
+  <div class="page_playlist">
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DXclWedfNUp3z?utm_source=generator" width="100%"  frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+  </div>
+
 
 
 </body>
