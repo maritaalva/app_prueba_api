@@ -77,36 +77,48 @@ window.onload = () => {
     sendIdentification();
   });
 
+ /** Escuchar eventos de los botones */
+let addBtn = document.querySelector("#add_btn");
+addBtn.addEventListener("click", addPlant, false);
 
 
   function buildTable(data){
 		var table = document.getElementById('myTable')
-
-
- /** Escuchar eventos de los botones */
-let addBtn = document.querySelector("#add_btn");
-let i = 0;
-addBtn.addEventListener("click", addPlant, false);
-		for (let i = 0; i < data.length; i++){
+		for (var i = 0; i < data.length; i++){
 			var row = `<div class="plant_card" id="${data[i].id}">
       <div class="plant_card_img"><img id="plant_card_img" src = ${data[i].similar_images[0]["url"]} width="200" height="200"></div>
       <a><span class="plant_name">${data[i].plant_name}</span></a>
       <p>${(data[i].probability).toFixed(2)}%</p>
-      <input type="submit" id="addbtn_${data[i].id}" value="Añadir">
+      <input type="submit" id="addbtn_" value="Añadir">
       </div>`
       table.innerHTML += row
 		}  
-    let boton = document.querySelector("#addbtn_");
-    boton.addEventListener("click", function() {
-      alert("xdcfvgbhnjmkl,ñl");
-      // document.getElementById("demo").innerHTML = "Hello World";
-      console.log(plantInfo[i].id);
-    });   
+    // let boton = document.querySelector("#addbtn_");
+    // boton.addEventListener("click", function() {
+    //   // document.getElementById("demo").innerHTML = "Hello World";
+    //   console.log(plantInfo[1].id);
+    // });   
 
 // <button class="btn-mis-locs"><span class="mis-locs-text">♡</span></button>
-   // <input type="submit" id="add" value="Añadir">
+   // <input type="submit" id="add" value="Añadir"> 
+  
 	}
+  var buttons = document.querySelectorAll("#addbtn_");
+  for (var i = 0; i < buttons.length; i++) {
+      var self = buttons[i];
+      self.addEventListener('click', function (event) {  
+          // prevent browser's default action
+          event.preventDefault();
+              console.log(plantInfo[1].id);
+             addPlant(this);
+          // call your awesome function here
+          // MyAwesomeFunction(this); // 'this' refers to the current button on for loop
+      }, false);
+  }
+  // function MyAwesomeFunction (){
+  //   console.log(${data.id});
 
+  // };
   function sendIdentification() {
       const files = [...document.querySelector('input[type=file]').files];
       const promises = files.map((file) => {
@@ -207,12 +219,11 @@ renderPlants();
                 btnsBorrar.forEach(item => {
                     item.addEventListener("click", (e) => {
                       plantaid.forEach(element => {
-                            if(element.doc.pname == e.target.previousSibling.previousSibling.outerText){
                                 db.get(element.doc._id).then(function(doc){
                                         return db.remove(doc)
                                 });
                                 item.parentElement.remove();
-                            }
+                            
                         });
                     })
                 });
