@@ -1,10 +1,9 @@
-
 html, body {
-background-color: #90B98F;
+  background-color: #90B98F;
   height: 100%;
   margin: 0;
-
 }
+
 @font-face {
   font-family: 'MonumentGRegular';
   src: url(../fonts/MonumentGrotesk-Regular.woff) format("woff"), url(../fonts/MonumentGrotesk-Regular.woff2) format("woff2");
@@ -18,6 +17,7 @@ background-color: #90B98F;
   font-weight: 400;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'MonumentGBold';
   src: url(../fonts/MonumentGrotesk-Bold.woff) format("woff"), url(../fonts/MonumentGrotesk-Bold.woff2) format("woff2");
@@ -32,16 +32,17 @@ background-color: #90B98F;
   font-style: normal;
 }
 
-.fontRegular{
+.fontRegular {
   font-family: 'MonumentGRegular';
 }
 
-.fontMono{
+.fontMono {
   font-family: 'MonumentGSemiMono';
 }
-.page_bck{
-  z-index:1;
-  position:fixed;
+
+.page_bck {
+  z-index: 1;
+  position: fixed;
   background-color: #F4F4EA;
   width: 100%;
   height: 100%;
@@ -49,127 +50,191 @@ background-color: #90B98F;
   bottom: 3.5rem;
 }
 
-#app_logo{
+#app_logo {
   height: 1.5rem;
   top: 1.5rem;
   left: 50%;
-  transform: translate(-50%, -50%);
-  position:relative;
-  filter: blur(2px);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  position: relative;
+  -webkit-filter: blur(2px);
+          filter: blur(2px);
   z-index: 10;
 }
 
-#app_logo:hover{
-  filter: blur(0px);
-
+#app_logo:hover {
+  -webkit-filter: blur(0px);
+          filter: blur(0px);
 }
-.gh_menu{
+
+.gh_menu {
   background-color: #00473C;
   position: fixed;
-  z-index:3;
+  z-index: 3;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 3.5rem;
   overflow: hidden;
   bottom: 0;
   width: 100%;
 }
-.menu_icon{
+
+.menu_icon {
   height: 2.5rem;
 }
 
-
-/*/////////PAGINA CAMARA///////////*/
-.page_camera{
+/* */
+.page_camera {
   margin: 3rem 24px 0;
-  z-index:2;
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
 }
-.form_section{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 
-}
-#camera_form{
+.form_section {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#camera_form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 1.5rem;
 }
 
-#image_box{
+#image_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   border: 2px solid  #90B98F;
-  border-radius:20px;
+  border-radius: 20px;
   height: 240px;
   width: 200px;
-  filter: blur(3px);
-  transition: 1s;
-
-
 }
 
-#imgpreview{
-  object-fit: cover;
-  border-radius:20px;
+#imgpreview {
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 20px;
 }
 
-#imgpreview::after{
-  filter: blur(0px);
-}
-#myTable{
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-  margin-top: 4rem;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-  margin-bottom: 4rem;
-}
-.plant_card{
-  height: 15rem;
-  width: 17rem;
-  background-color: #A9C1A9;
-  display: flex;
-  flex-direction: column;
-  margin: 1rem;
- padding: 2rem;  
-  border-radius: 15px;
-  align-items: center;
-}
-.plant_card_img{
-  height: 9rem;
-  width: 9rem;
-  border-radius: 2px;
-}
-.plant_card_img img{
-  height: 9rem;
-  width: 9rem;
-  object-fit: cover;
-  border-radius: 15px;
-}
-#search_btn{
+#add_btn {
   font-family: MonumentGSemiMono;
   color: #377E59;
   font-size: 1rem;
   background-color: #F4F4EA;
   padding: .4rem .8rem;
-width: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   border-radius: 2.5rem;
   border: #377E59 solid 2px;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
+
+#myTable {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-top: 4rem;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  margin-bottom: 4rem;
+}
+
+.plant_card {
+  height: 15rem;
+  width: 17rem;
+  background-color: #A9C1A9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 1rem;
+  padding: 2rem;
+  border-radius: 15px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.plant_card_img {
+  height: 9rem;
+  width: 9rem;
+  border-radius: 2px;
+}
+
+.plant_card_img img {
+  height: 9rem;
+  width: 9rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 15px;
+}
+
+#search_btn {
+  font-family: MonumentGSemiMono;
+  color: #377E59;
+  font-size: 1rem;
+  background-color: #F4F4EA;
+  padding: .4rem .8rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 2.5rem;
+  border: #377E59 solid 2px;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
 input[type=file]::file-selector-button {
   font-family: MonumentGSemiMono;
   color: #ECC82A;
@@ -178,115 +243,142 @@ input[type=file]::file-selector-button {
   border-radius: 2.5rem;
   border: #377E59 solid 2px;
   padding: .4rem .8rem;
+  -webkit-transition: 1s;
   transition: 1s;
 }
-/*/////////PAGINA BUSCAR///////////*/
-.page_search{
-  z-index:2;
+
+/* */
+.page_search {
+  z-index: 2;
   display: none;
-position: relative;
+  position: relative;
 }
 
-
-/*/////////PAGINA ME GUSTA///////////*/
-.page_like{
-  z-index:2;
+/* */
+.page_like {
+  z-index: 2;
   display: none;
-position: relative;
-flex-direction: column;
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
-#fav_card{
- list-style: none;
+
+#fav_card {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   background-color: #A9C1A9;
   border-radius: 2.5rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 2REM;
   margin: 2rem 1rem 1rem;
+}
 
+#plant_card_img_fav {
+  -webkit-filter: blur(2px);
+          filter: blur(2px);
 }
-#plant_card_img_fav{
-  filter: blur(2px);
 
+#plant_card_img_fav:hover {
+  -webkit-filter: blur(0px);
+          filter: blur(0px);
 }
-#plant_card_img_fav:hover{
-filter: blur(0px);
-}
-#info_fav{
+
+#info_fav {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 0  0 0 1rem ;
-}
-/*/////////PAGINA PLAYLIST///////////*/
-.page_playlist{
-  z-index:2;
-  display: none;
-position: relative;
-background-color: #F4F4EA;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 0 0 1rem;
 }
 
-iframe { 
+/* */
+.page_playlist {
+  z-index: 2;
+  display: none;
+  position: relative;
+  background-color: #F4F4EA;
+}
+
+iframe {
   height: 100vh;
   position: inherit;
   mix-blend-mode: difference;
   margin-top: 2rem;
 }
 
-
 /* {
-  margin: 0;
-  padding: 0;
-} */
-
-#navbar
-{
+ *  margin: 0;
+ *  padding: 0;
+ *} */
+#navbar {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 10;
 }
-.navbar{
+
+.navbar {
+  background-image: -webkit-gradient(linear, left top, right top, from(#009999), to(#5f1782));
   background-image: linear-gradient(to right, #009999, #5f1782);
 }
 
-.jumbotron{
+.jumbotron {
   position: sticks;
-  align-content: left;
+  -ms-flex-line-pack: left;
+      align-content: left;
   padding: 5%;
 }
 
-#miniquiz {
+#miniquiz, .container, #picture {
   text-align: center;
 }
-.container {
-  text-align: center;
-}
-#picture{
-  text-align: center;
-}
-#lightspectrum
-.container{
-  padding:10%
-}
-.row
 
-#information1{
+#lightspectrum .container {
+  padding: 10%;
+}
+
+.row {
   text-align: left;
 }
 
-.row{
+.row #information1 {
   text-align: left;
 }
 
+@media screen and (min-width: 510px) and (max-width: 769px) {
+  body {
+    background-color: #009999;
+  }
+  .page_camera {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
 
-@media screen and (min-width:510px) and (max-width:769px) {
-body{
-  background-color: #009999;
-}
-}
 @media screen and (min-width: 770px) {
-  body{
+  body {
     background-color: #ff7530;
   }
-  }
+}
+/*# sourceMappingURL=styles.css.map */
